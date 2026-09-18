@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Goal Tamil</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/animations.css">
+
+</head>
+
+<body>
+    <!-- =========================================================
+     GOAL TAMIL SPLASH SCREEN
+========================================================= -->
+
+    <div id="splashScreen">
+
+        <div class="splash-content">
+
+            <div class="splash-ball">⚽</div>
+
+            <h1>GOAL TAMIL</h1>
+
+            <p>Learn Tamil. Score Goals.</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Main App -->
+    <div id="app">
+        <div id="homeScreen">
+
+            <!-- ===========================
+             HEADER
+        ============================ -->
+            <!-- =========================================================
+     GOAL TAMIL HOME / WORLD CUP MAP
+========================================================= -->
+
+            <header class="top-header">
+
+                <div class="profile-area">
+
+                    <div class="profile-card">
+                        <img src="assets/images/profile.jpg" alt="Profile" class="profile-picture">
+
+                        <div class="profile-details">
+                            <div class="profile-name">Hashu</div>
+                            <div class="profile-stat xp-stat">
+                                <span class="stat-icon">🏆</span>
+                                <span id="xpValue" class="stat-value">0 XP</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="header-divider"></div>
+
+                    <div class="profile-stat goals-stat">
+                        <span class="stat-icon">⚽</span>
+                        <span id="goalValue" class="stat-value">0 Goals</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+
+
+            <!-- =========================================================
+     WORLD CUP MAP
+========================================================= -->
+
+            <section class="world-map">
+
+
+                <!-- Winding Road -->
+
+                <svg class="map-road" viewBox="0 0 600 1000" preserveAspectRatio="none" aria-hidden="true">
+
+                    <!-- Road shadow -->
+
+                    <path class="road-shadow" d="
+                M 300 950
+                C 120 880,
+                  120 760,
+                  300 680
+                C 480 600,
+                  480 500,
+                  300 420
+                C 120 340,
+                  120 220,
+                  300 100
+            " />
+
+                    <!-- Beige road -->
+
+                    <path class="road-surface" d="
+                M 300 950
+                C 120 880,
+                  120 760,
+                  300 680
+                C 480 600,
+                  480 500,
+                  300 420
+                C 120 340,
+                  120 220,
+                  300 100
+            " />
+
+                    <!-- Road centre marking -->
+
+                    <path class="road-marking" d="
+                M 300 950
+                C 120 880,
+                  120 760,
+                  300 680
+                C 480 600,
+                  480 500,
+                  300 420
+                C 120 340,
+                  120 220,
+                  300 100
+            " />
+
+                </svg>
+
+
+                <!-- =====================================================
+         LEVEL 1 — UYIR
+    ====================================================== -->
+
+                <div id="uyirCard" class="map-level unlocked" data-level="uyir">
+
+                    <div class="level-node">
+
+                        ⚽
+
+                    </div>
+
+                    <div class="level-info">
+
+                        <h3>உயிர்</h3>
+
+                        <p>Academy League</p>
+
+                        <span class="league-status">
+                            Current
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =====================================================
+         LEVEL 2 — MEI
+    ====================================================== -->
+
+                <div id="meiCard" class="map-level locked">
+
+                    <div class="level-node">
+
+                        🔒
+
+                    </div>
+
+                    <div class="level-info">
+
+                        <h3>மெய்</h3>
+
+                        <p>Junior League</p>
+
+                        <span class="league-status">
+                            Locked
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =====================================================
+         LEVEL 3 — UYIRMEI
+    ====================================================== -->
+
+                <div id="uyirmeiCard" class="map-level locked">
+
+                    <div class="level-node">
+
+                        🔒
+
+                    </div>
+
+                    <div class="level-info">
+
+                        <h3>உயிர்மெய்</h3>
+
+                        <p>Pro League</p>
+
+                        <span class="league-status">
+                            Locked
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =====================================================
+         LEVEL 4 — WORDS
+    ====================================================== -->
+
+                <div id="wordsCard" class="map-level locked">
+
+                    <div class="level-node">
+
+                        🔒
+
+                    </div>
+
+                    <div class="level-info">
+
+                        <h3>Words</h3>
+
+                        <p>Champions League</p>
+
+                        <span class="league-status">
+                            Locked
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =====================================================
+         WORLD CUP DESTINATION
+    ====================================================== -->
+
+                <div class="world-cup">
+
+                    <div class="world-cup-node">
+
+                        🏆
+
+                    </div>
+
+                    <h2>
+                        TAMIL WORLD CUP
+                    </h2>
+
+                    <p>
+                        Become a Champion
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =========================================================
+     START TRAINING
+========================================================= -->
+
+            <section class="start-section">
+
+                <button id="startTrainingBtn">
+
+                    ⚽ START TRAINING
+
+                </button>
+
+            </section>
+
+        </div>
+        <!-- ===========================
+     TRAINING SCREEN
+=========================== -->
+
+        <section id="trainingScreen" class="hidden">
+
+            <div class="training-header">
+
+                <button id="backBtn" class="icon-btn">
+                    ←
+                </button>
+
+                <div class="scoreboard">
+
+                    <div class="score-item">
+
+                        ⭐ XP
+
+                        <span id="trainingXP">
+                            0
+                        </span>
+
+                    </div>
+
+                    <div class="score-item">
+
+                        ⚽ Goals
+
+                        <span id="goalCount">
+                            0
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="training-container">
+
+                <h2 id="leagueTitle">
+                    🏆 Academy League
+                </h2>
+
+                <div class="progress-area">
+
+                    <div class="progress-text">
+                        Letter
+                        <span id="progressNumber">1</span> /
+                        <span id="totalLetters">12</span>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="lesson-progress">
+
+                            <span id="lessonProgressText">
+                                1 / 12
+                            </span>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div id="progressFill"></div>
+
+                            <div id="footballProgress">
+                                ⚽
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="letterCard">
+
+                    <div id="letterDisplay">
+                        அ
+                    </div>
+
+                </div>
+
+                <div class="action-buttons">
+
+                    <button id="hearBtn" class="hear-btn">
+                        🔊 Hear
+                    </button>
+
+                </div>
+
+                <div class="game-buttons">
+
+                    <button id="scoreBtn" class="score-btn">
+                        ✅ I READ IT
+                    </button>
+
+                    <button id="passBtn" class="pass-btn">
+                        📚 PRACTICE LATER
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- ===========================
+     GAME POPUP
+=========================== -->
+        <div id="gamePopup" class="popup hidden">
+            <div class="popup-card football-popup">
+                <button id="popupCloseBtn" class="popup-close">×</button>
+                <div id="popupEmoji" class="popup-trophy">🏆</div>
+
+                <h2 id="popupTitle">MATCH WON!</h2>
+
+                <div id="popupScoreboard" class="scoreboard">
+
+                    <div class="team-row">
+                        <span>⚽ Goal Tamil FC</span>
+                        <span class="score">12</span>
+                    </div>
+
+                    <div class="team-row">
+                        <span>🥅 Challenge</span>
+                        <span class="score">0</span>
+                    </div>
+
+                </div>
+
+                <p id="popupMessage"></p>
+
+                <button id="popupBtn" class="hidden">
+                    Continue →
+                </button>
+
+            </div>
+
+        </div>
+        <div id="goalAnimation" class="goal-animation hidden">
+
+            <div class="goal-text">
+                ⚽ GOOOOAAALLL!!
+            </div>
+
+        </div>
+
+        <!-- JavaScript -->
+        <!-- <script src="js/uyirmei.js"></script> -->
+        <script src="js/data.js"></script>
+        <script src="js/app.js"></script>
+
+</body>
+
+</html>

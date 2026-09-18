@@ -1,0 +1,1944 @@
+/* =========================================================
+   GOAL TAMIL
+   NEW WORLD CUP MAP DESIGN
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    color: #fff;
+
+    font-family:
+        "Poppins",
+        "Noto Sans Tamil",
+        sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(0, 20, 5, 0.28),
+            rgba(0, 20, 5, 0.28)
+        ),
+        url("../assets/images/stadium.png");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    background-attachment: scroll;
+
+    overflow-x: hidden;
+}
+
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+button {
+    font-family: inherit;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+#app {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   REMOVE TOP-LEFT GOAL TAMIL LOGO
+========================================================= */
+
+.logo {
+    display: none !important;
+}
+
+/* =========================================================
+   HOME SCREEN
+========================================================= */
+
+#homeScreen {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding-bottom: 60px;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+/* ================================
+   TOP HEADER
+================================ */
+
+.top-header {
+    position: relative;
+    width: 100%;
+    min-height: 80px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding: 12px 42px;
+
+    z-index: 20;
+}
+
+/* Right-side profile + stats */
+.profile-area {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    padding: 6px 0;
+}
+
+/* ================================
+   PROFILE
+================================ */
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-picture {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 3px solid #ffffff;
+
+    box-shadow:
+        0 0 0 2px rgba(255, 210, 60, 0.9),
+        0 4px 12px rgba(0, 0, 0, 0.45);
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-name {
+    font-size: 17px;
+    font-weight: 800;
+    color: #ffffff;
+
+    white-space: nowrap;
+
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* ================================
+   DIVIDER
+================================ */
+
+.header-divider {
+    width: 1px;
+    height: 42px;
+
+    background: rgba(255, 255, 255, 0.45);
+}
+
+/* ================================
+   XP / GOALS
+================================ */
+
+.profile-stat {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.stat-icon {
+    font-size: 19px;
+}
+
+.xp-stat .stat-value {
+    color: #ffd83d;
+}
+
+.goals-stat .stat-value {
+    color: #ffffff;
+}
+
+.game-header {
+
+    width: min(1100px, 92%);
+
+    margin: 0 auto;
+
+    padding: 25px 0 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+/* Goal Tamil logo */
+
+.game-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    letter-spacing: .5px;
+
+    text-shadow:
+        0 3px 12px rgba(0, 0, 0, .45);
+
+}
+
+
+/* Logo football */
+
+.game-logo:first-letter {
+
+    font-size: 25px;
+
+}
+
+
+/* =========================================================
+   XP / GOALS
+========================================================= */
+
+.profile-area {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.profile-avatar {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 3px solid #8cff43;
+
+    box-shadow:
+        0 0 0 2px rgba(0, 0, 0, .35),
+        0 0 16px rgba(80, 255, 50, .35);
+}
+
+.profile-name {
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.profile-stats {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+.profile-stat.xp {
+    color: #ffd83d;
+}
+
+.profile-stat.goals {
+    color: #fff;
+}
+
+.game-stats {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.stat {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, .5);
+
+}
+
+
+.stat:first-child {
+
+    color: #ffd54f;
+
+}
+
+
+/* =========================================================
+   MAP INTRO
+========================================================= */
+
+.map-intro {
+
+    text-align: center;
+
+    padding-top: 20px;
+
+    position: relative;
+
+    z-index: 5;
+
+}
+
+
+.map-intro h1 {
+
+    font-size: clamp(22px, 4vw, 34px);
+
+    font-weight: 800;
+
+    letter-spacing: .8px;
+
+    text-shadow:
+        0 4px 15px rgba(0, 0, 0, .65);
+
+}
+
+
+.map-intro p {
+
+    margin-top: 6px;
+
+    font-size: 13px;
+
+    opacity: .78;
+
+}
+
+
+/* =========================================================
+   WORLD MAP
+========================================================= */
+
+/* =========================================================
+   FOOTBALL MAP PLAY AREA
+========================================================= */
+
+.world-map {
+
+    position: relative;
+
+    /* width: min(1000px, 100%); */
+
+    height: 1500px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            rgba(4, 15, 30, 0.08),
+            rgba(4, 15, 30, 0.08)
+        ),
+        url("../assets/images/stadium.png");
+
+    background-size: cover;
+
+    background-position: center top;
+
+    background-repeat: no-repeat;
+
+}
+
+
+/* =========================================================
+   ROAD SVG
+========================================================= */
+
+.map-road {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: visible;
+
+    z-index: 1;
+
+}
+
+
+/* Dark edge around road */
+
+.road-shadow {
+    fill: none;
+    stroke: #e6d795;
+    stroke-width: 45px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    filter:
+        drop-shadow(0 10px 7px rgba(0, 0, 0, 0.5));
+}
+
+.road-surface {
+    fill: none;
+    stroke: #42651b;
+    stroke-width: 38px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    filter:
+        drop-shadow(0 3px 3px rgba(0, 0, 0, 0.3));
+}
+
+
+/* Road highlight */
+
+.road-marking {
+
+    fill: none;
+
+    stroke: rgba(255, 240, 195, .8);
+
+    stroke-width: 2;
+
+    stroke-dasharray: 12 15;
+
+    stroke-linecap: round;
+
+}
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.map-heading {
+    position: relative;
+    z-index: 10;
+
+    text-align: center;
+
+    padding: 10px 15px 18px;
+}
+
+.map-heading h1 {
+    margin: 0;
+
+    font-size: clamp(28px, 4vw, 44px);
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.map-heading p {
+    margin: 6px 0 0;
+
+    font-size: 13px;
+
+    opacity: .75;
+}
+
+/* =========================================================
+   MAP / PLAY AREA
+========================================================= */
+
+.world-map {
+    position: relative;
+
+    width: min(1050px, 100%);
+
+    height: 1500px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    /*
+       IMPORTANT:
+       No separate stadium image here.
+       Body provides the football ground background.
+    */
+
+    background: transparent;
+
+    background-image: none;
+}
+
+
+/* =========================================================
+   REMOVE OLD START BUTTON
+========================================================= */
+
+.start-section,
+#startTrainingBtn {
+    display: none !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .top-header {
+        min-height: 60px;
+        padding: 8px 0;
+    }
+
+    .profile-area {
+        gap: 8px;
+    }
+
+    .profile-avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .profile-name {
+        display: none;
+    }
+
+    .profile-stats {
+        gap: 8px;
+    }
+
+    .profile-stat {
+        font-size: 11px;
+    }
+
+    .map-heading {
+        padding-top: 8px;
+    }
+
+    .map-heading h1 {
+        font-size: 25px;
+    }
+
+    .map-heading p {
+        font-size: 11px;
+    }
+
+    .world-map {
+        width: 100%;
+        height: 1250px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .top-header {
+        padding: 10px 15px;
+    }
+
+    .profile-area {
+        gap: 10px;
+    }
+
+    .profile-picture {
+        width: 42px;
+        height: 42px;
+    }
+
+    .profile-name {
+        font-size: 14px;
+    }
+
+    .profile-stat {
+        font-size: 13px;
+        gap: 4px;
+    }
+
+    .stat-icon {
+        font-size: 15px;
+    }
+
+    .header-divider {
+        height: 30px;
+    }
+}
+
+/* =========================================================
+   MAP LEVEL
+========================================================= */
+
+.map-level {
+
+    position: absolute;
+
+    z-index: 4;
+
+    width: auto;
+
+    /* text-align: center; */
+
+    cursor: pointer;
+
+    transform: translate(-50%, -50%);
+
+    transition:
+        transform .25s ease,
+        filter .25s ease;
+    display: flex;
+
+}
+
+
+/* Hover */
+
+.map-level:hover {
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.06);
+
+}
+
+
+/* =========================================================
+   LEVEL NODE
+========================================================= */
+
+.level-node {
+
+    width: 60px;
+
+    height: 60px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #dce4e8
+        );
+
+    border: 3px solid #ffffff;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, .80);
+
+    font-size: 27px;
+
+}
+
+
+/* Current / unlocked */
+
+.map-level.unlocked .level-node {
+
+    background:
+        linear-gradient(
+            145deg,
+            #20d66b,
+            #009d46
+        );
+
+    border-color: #ffffff;
+
+    box-shadow:
+        0 0 13px 4px rgb(23, 199, 97),
+        0 8px 25px rgba(0, 0, 0, .5);
+    width: 65px;
+    height: 65px;
+    font-size: 40px;
+
+}
+
+
+/* Locked */
+
+.map-level.locked {
+
+    opacity: .78;
+
+}
+
+
+.map-level.locked .level-node {
+
+    background:#000;
+
+}
+
+
+/* =========================================================
+   LEVEL INFORMATION
+========================================================= */
+
+.level-info {
+
+    margin-top: 8px;
+
+    text-shadow:
+        0 3px 8px rgba(0, 0, 0, .75);
+        padding-left: 10px;
+
+}
+
+
+.level-info h3 {
+
+    font-family:
+        "Noto Sans Tamil",
+        "Poppins",
+        sans-serif;
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+}
+
+
+.level-info p {
+
+    margin-top: 2px;
+
+    font-size: 12px;
+
+    opacity: .85;
+
+}
+
+
+.league-status {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   MAP POSITIONS
+   Bottom → Top
+========================================================= */
+
+
+/* உயிர் */
+
+#uyirCard {
+
+    left: 56%;
+
+    top: 95%;
+
+}
+
+
+/* மெய் */
+
+#meiCard {
+
+    left: 50%;
+
+    top: 70%;
+
+}
+
+
+/* உயிர்மெய் */
+
+#uyirmeiCard {
+
+    left: 60%;
+
+    top: 43%;
+
+}
+
+
+/* Words */
+
+#wordsCard {
+
+    left: 36%;
+
+    top: 23%;
+
+}
+
+
+/* =========================================================
+   WORLD CUP DESTINATION
+========================================================= */
+
+.world-cup {
+
+    position: absolute;
+
+    z-index: 5;
+
+    left: 50%;
+
+    top: 3%;
+
+    transform: translateX(-50%);
+
+    width: 230px;
+
+    text-align: center;
+
+    text-shadow:
+        0 4px 12px rgba(0, 0, 0, .7);
+
+}
+
+
+.world-cup-node {
+
+    width: 92px;
+
+    height: 92px;
+
+    margin: 0 auto 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff7c4 0%,
+            #ffd54f 45%,
+            #d89b00 100%
+        );
+
+    border: 6px solid #fff;
+
+    box-shadow:
+        0 0 0 6px rgba(255, 213, 79, .22),
+        0 10px 30px rgba(0, 0, 0, .55);
+
+    font-size: 45px;
+
+}
+
+
+.world-cup h2 {
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+}
+
+
+.world-cup p {
+
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    opacity: .8;
+
+}
+
+
+/* =========================================================
+   START TRAINING
+========================================================= */
+
+.start-section {
+
+    display: flex;
+
+    justify-content: center;
+
+    padding: 0 20px 40px;
+
+}
+
+
+#startTrainingBtn {
+
+    border: none;
+
+    border-radius: 50px;
+
+    padding: 15px 38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00d65b,
+            #00a844
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(0, 200, 83, .35);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+#startTrainingBtn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 35px rgba(0, 200, 83, .45);
+
+}
+
+
+#startTrainingBtn:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================================
+   TRAINING SCREEN
+========================================================= */
+
+#trainingScreen {
+
+    min-height: 100vh;
+
+    width: min(700px, 94%);
+
+    margin: 0 auto;
+
+    padding: 25px 0 50px;
+
+}
+
+
+/* Training header */
+
+.training-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+}
+
+
+.icon-btn {
+
+    width: 46px;
+
+    height: 46px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(10, 25, 42, .75);
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, .3);
+
+}
+
+
+/* Training scoreboard */
+
+.scoreboard {
+
+    display: flex;
+
+    gap: 12px;
+
+}
+
+
+.score-item {
+
+    padding: 9px 14px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(10, 25, 42, .72);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.training-container {
+
+    margin-top: 35px;
+
+    padding: 25px;
+
+    border-radius: 28px;
+
+    background:
+        rgba(7, 20, 33, .78);
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35);
+
+    backdrop-filter: blur(12px);
+
+}
+
+
+#leagueTitle {
+
+    text-align: center;
+
+    font-size: 22px;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-area {
+
+    margin-bottom: 35px;
+
+}
+
+
+.progress-text {
+
+    text-align: center;
+
+    font-size: 13px;
+
+    margin-bottom: 9px;
+
+    opacity: .85;
+
+}
+
+
+.progress-bar {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 10px;
+
+    border-radius: 20px;
+
+    overflow: visible;
+
+    background:
+        rgba(255,255,255,.15);
+
+}
+
+
+#progressFill {
+
+    width: 0;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00c853,
+            #69f0ae
+        );
+
+    transition:
+        width .35s ease;
+
+}
+
+
+/* =========================================================
+   LETTER CARD
+========================================================= */
+
+#letterCard {
+
+    min-height: 280px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 28px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+}
+
+
+#letterDisplay {
+
+    font-family:
+        "Noto Sans Tamil",
+        sans-serif;
+
+    font-size: clamp(90px, 18vw, 150px);
+
+    font-weight: 700;
+
+    text-shadow:
+        0 10px 25px rgba(0,0,0,.45);
+
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.action-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 22px;
+
+}
+
+
+.hear-btn {
+
+    border: none;
+
+    border-radius: 40px;
+
+    padding: 13px 28px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   GAME BUTTONS
+========================================================= */
+
+.game-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 18px;
+
+}
+
+
+.game-buttons button {
+
+    flex: 1;
+
+    border: none;
+
+    border-radius: 18px;
+
+    padding: 15px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+}
+
+
+.score-btn {
+
+    background: #00c853;
+
+    color: white;
+
+}
+
+
+.pass-btn {
+
+    background:
+        rgba(255,255,255,.12);
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   POPUP
+========================================================= */
+
+.popup {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0,0,0,.68);
+
+    backdrop-filter:
+        blur(8px);
+
+}
+
+
+.popup-card {
+
+    width: min(420px, 100%);
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #14283c,
+            #091722
+        );
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.55);
+
+}
+
+
+.popup-emoji {
+
+    font-size: 55px;
+
+    margin-bottom: 10px;
+
+}
+
+
+#popupTitle {
+
+    font-size: 25px;
+
+}
+
+
+#popupMessage {
+
+    margin-top: 10px;
+
+    opacity: .85;
+
+}
+
+
+.popup-btn {
+
+    margin-top: 22px;
+
+    border: none;
+
+    border-radius: 40px;
+
+    padding: 13px 30px;
+
+    background: #00c853;
+
+    color: white;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   GOAL ANIMATION
+========================================================= */
+
+.goal-animation {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    pointer-events: none;
+
+    background:
+        rgba(0,0,0,.25);
+
+}
+
+
+.goal-text {
+
+    font-size:
+        clamp(30px, 8vw, 80px);
+
+    font-weight: 900;
+
+    text-align: center;
+
+    text-shadow:
+        0 8px 25px rgba(0,0,0,.6);
+
+}
+
+
+/* =========================================================
+   SPLASH SCREEN
+========================================================= */
+
+#splashScreen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #071421;
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transition:
+        opacity .8s ease;
+
+}
+
+
+#splashScreen.hide {
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .game-header {
+
+        padding-top: 18px;
+
+    }
+
+
+    .game-logo {
+
+        font-size: 18px;
+
+    }
+
+
+    .game-stats {
+
+        gap: 10px;
+
+    }
+
+
+    .stat {
+
+        font-size: 12px;
+
+    }
+
+
+    .map-intro {
+
+        padding-top: 15px;
+
+    }
+
+
+    .map-intro h1 {
+
+        font-size: 23px;
+
+    }
+
+
+    .world-map {
+
+        width: 100%;
+
+        height: 1500px;
+
+    }
+
+
+    .map-level {
+
+        width: 145px;
+
+    }
+
+
+    .level-node {
+
+        width: 64px;
+
+        height: 64px;
+
+        font-size: 23px;
+
+        border-width: 5px;
+
+    }
+
+
+    .level-info h3 {
+
+        font-size: 18px;
+
+    }
+
+
+    .level-info p {
+
+        font-size: 11px;
+
+    }
+
+
+    #uyirCard {
+
+        left: 22%;
+
+        top: 88%;
+
+    }
+
+
+    #meiCard {
+
+        left: 76%;
+
+        top: 65%;
+
+    }
+
+
+    #uyirmeiCard {
+
+        left: 24%;
+
+        top: 41%;
+
+    }
+
+
+    #wordsCard {
+
+        left: 75%;
+
+        top: 18%;
+
+    }
+
+
+    .world-cup {
+
+        top: 0;
+
+    }
+
+
+    .world-cup-node {
+
+        width: 75px;
+
+        height: 75px;
+
+        font-size: 35px;
+
+    }
+
+
+    .world-cup h2 {
+
+        font-size: 15px;
+
+    }
+
+
+    .start-section {
+
+        padding-bottom: 25px;
+
+    }
+
+
+    .training-container {
+
+        padding: 18px;
+
+    }
+
+
+    #letterCard {
+
+        min-height: 240px;
+
+    }
+
+
+    .game-buttons {
+
+        flex-direction: column;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .game-header {
+
+        width: 94%;
+
+    }
+
+
+    .game-logo span {
+
+        display: none;
+
+    }
+
+
+    .stat {
+
+        font-size: 11px;
+
+    }
+
+
+    .world-map {
+
+        height: 700px;
+
+    }
+
+
+    .map-level {
+
+        width: 125px;
+
+    }
+
+
+    .level-node {
+
+        width: 58px;
+
+        height: 58px;
+
+        font-size: 21px;
+
+    }
+
+
+    .level-info h3 {
+
+        font-size: 16px;
+
+    }
+
+
+    #uyirCard {
+
+        left: 19%;
+
+    }
+
+
+    #meiCard {
+
+        left: 80%;
+
+    }
+
+
+    #uyirmeiCard {
+
+        left: 20%;
+
+    }
+
+
+    #wordsCard {
+
+        left: 79%;
+
+    }
+
+}
+
+/* =========================================================
+   SPLASH SCREEN
+========================================================= */
+
+#splashScreen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #12395b 0%,
+            #071421 65%,
+            #030a12 100%
+        );
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+
+}
+
+
+#splashScreen.hide {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+}
+
+
+.splash-content {
+
+    text-align: center;
+
+    animation:
+        splashEnter .8s ease forwards;
+
+}
+
+
+.splash-ball {
+
+    font-size: 75px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.splash-content h1 {
+
+    font-size: clamp(34px, 8vw, 58px);
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.splash-content p {
+
+    margin-top: 8px;
+
+    font-size: 14px;
+
+    opacity: .75;
+
+}
+
+
+@keyframes splashEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(.85);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-picture {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 3px solid #ffffff;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.35);
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.profile-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.profile-xp {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffd83d;
+}
+.popup-card {
+    position: relative;
+}
+
+.popup-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.15);
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.popup-close:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
