@@ -626,27 +626,52 @@ function moveNext() {
     // Finished revision lesson
 
     if (appState.currentLeague === "uyirmei") {
-
-        showMatchWonPopup(
-            UYIRMEI_GROUPS[
-                appState.currentUyirmeiMatch + 1
-            ].team
-        );
-
-        popupBtn.onclick = function () {
-
-            hidePopup();
-
-            startNextUyirmeiMatch();
-
-        };
-
+        finishUyirmeiMatch();
         return;
-
     }
 
     completeLeague();
 
+}
+
+function finishUyirmeiMatch() {
+    const nextMatchIndex = appState.currentUyirmeiMatch + 1;
+
+    // All உயிர்மெய் groups are completed
+    if (nextMatchIndex >= UYIRMEI_GROUPS.length) {
+        completeLeague();
+        return;
+    }
+
+    // Show the next group, such as ங வரிசை
+    showMatchWonPopup(
+        UYIRMEI_GROUPS[nextMatchIndex].team
+    );
+
+    popupBtn.onclick = function () {
+        hidePopup();
+        startNextUyirmeiMatch();
+    };
+}
+
+function startNextUyirmeiMatch() {
+    appState.currentUyirmeiMatch++;
+
+    const match = UYIRMEI_GROUPS[
+        appState.currentUyirmeiMatch
+    ];
+
+    appState.currentLesson = [...match.letters];
+    appState.currentIndex = 0;
+    appState.skippedLetters = [];
+    appState.revisionMode = false;
+
+    leagueTitle.textContent =
+        `⚽ Match ${appState.currentUyirmeiMatch + 1} - ${match.team} வரிசை`;
+
+    updateProgress();
+    showLetter();
+    saveGame();
 }
 
 /*====================================================
@@ -655,12 +680,15 @@ function moveNext() {
 
 function startRevisionRound() {
 
-    // No skipped letters? League finished.
+    // No skipped letters? Move to the next group.
     if (appState.skippedLetters.length === 0) {
+        if (appState.currentLeague === "uyirmei") {
+            finishUyirmeiMatch();
+        } else {
+            completeLeague();
+        }
 
-        completeLeague();
         return;
-
     }
 
     // Copy skipped letters into revision lesson
