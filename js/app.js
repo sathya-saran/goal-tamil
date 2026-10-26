@@ -372,6 +372,7 @@ function saveGame() {
         currentLeague: appState.currentLeague,
 
         currentIndex: appState.currentIndex,
+        currentUyirmeiMatch: appState.currentUyirmeiMatch,
 
         xp: appState.xp,
         goalCount: appState.goalCount,
@@ -409,6 +410,8 @@ function loadGame() {
     const data = JSON.parse(savedData);
 
     appState.currentLeague = data.currentLeague;
+    appState.currentUyirmeiMatch =
+        data.currentUyirmeiMatch || 0;
 
     appState.currentIndex = data.currentIndex;
 
@@ -421,20 +424,17 @@ function loadGame() {
         data.unlockedLeagues || ["uyir"];
 
     if (appState.revisionMode) {
+        appState.currentLesson = [...appState.skippedLetters];
 
-        appState.currentLesson =
-            [...appState.skippedLetters];
+    } else if (appState.currentLeague === "uyirmei") {
+        appState.currentLesson = [
+            ...UYIRMEI_GROUPS[appState.currentUyirmeiMatch].letters
+        ];
 
     } else {
-
-        appState.currentLesson =
-            [...LEVELS[appState.currentLeague]];
-
-    }
-    if (appState.currentIndex >= appState.currentLesson.length) {
-
-        appState.currentIndex = 0;
-
+        appState.currentLesson = [
+            ...LEVELS[appState.currentLeague]
+        ];
     }
     appState.goalCount =
         data.goalCount || 0;
@@ -1004,61 +1004,52 @@ function updateLeagueCards() {
 
 }
 function startLeague(league) {
-    if (!appState.unlockedLeagues.includes(league)) {
-        showPopup(
-            "🔒",
-            "Level Locked",
-            "Complete the previous level first."
-        );
-        return;
-    }
+    const isResumingUyirmei =
+        league === "uyirmei" &&
+        appState.currentLeague === "uyirmei";
 
     appState.currentLeague = league;
 
-    appState.currentIndex = 0;
-
-    appState.skippedLetters = [];
-
-    appState.revisionMode = false;
-
-    // ---------- உயிர்மெய் ----------
     if (league === "uyirmei") {
+        if (!isResumingUyirmei) {
+            appState.currentUyirmeiMatch = 0;
+            appState.currentIndex = 0;
+            appState.skippedLetters = [];
+            appState.revisionMode = false;
+        }
 
-        appState.currentUyirmeiMatch = 0;
+        const match =
+            UYIRMEI_GROUPS[appState.currentUyirmeiMatch];
 
-        appState.currentLesson =
-            [...UYIRMEI_GROUPS[0].letters];
+        appState.currentLesson = [...match.letters];
 
         leagueTitle.textContent =
-            "⚽ Match 1 - க வரிசை";
+            `⚽ Match ${appState.currentUyirmeiMatch + 1} - ${match.team} வரிசை`;
 
-    }
+    } else {
+        appState.currentIndex = 0;
+        appState.skippedLetters = [];
+        appState.revisionMode = false;
 
-    // ---------- Other leagues ----------
-    else {
+        appState.currentLesson = [...LEVELS[league]];
 
-        appState.currentLesson =
-            [...LEVELS[league]];
-
-        if (league === "uyir")
+        if (league === "uyir") {
             leagueTitle.textContent = "⚽ உயிர் League";
+        }
 
-        if (league === "mei")
+        if (league === "mei") {
             leagueTitle.textContent = "⚽ மெய் League";
+        }
 
-        if (league === "words")
+        if (league === "words") {
             leagueTitle.textContent = "⚽ Words League";
-
+        }
     }
 
     updateProgress();
-
     showTraining();
-
     showLetter();
-
     saveGame();
-
 }
 function startNextUyirmeiMatch() {
 
