@@ -30,6 +30,19 @@ const LEVELS = {
 //console.log(GENERATED_UYIRMEI);
 //console.log(GAME_DATA.uyirmei.length);
 
+function shuffleLetters(letters) {
+    const shuffled = [...letters];
+
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+
+        [shuffled[i], shuffled[j]] =
+            [shuffled[j], shuffled[i]];
+    }
+
+    return shuffled;
+}
+
 /*====================================================
                 APP STATE
 ====================================================*/
@@ -1064,8 +1077,9 @@ function startNextUyirmeiMatch() {
 
     }
 
-    appState.currentLesson =
-        [...UYIRMEI_GROUPS[appState.currentUyirmeiMatch].letters];
+    appState.currentLesson = shuffleLetters(
+        UYIRMEI_GROUPS[appState.currentUyirmeiMatch].letters
+    );
 
     appState.currentIndex = 0;
 
@@ -1093,8 +1107,9 @@ function startUyirmeiMatch(matchIndex) {
 
     appState.currentUyirmeiMatch = matchIndex;
 
-    appState.currentLesson =
-        UYIRMEI_GROUPS[matchIndex].letters;
+    appState.currentLesson = shuffleLetters(
+    UYIRMEI_GROUPS[matchIndex].letters
+);
 
     appState.currentIndex = 0;
 
