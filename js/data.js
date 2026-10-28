@@ -44,16 +44,16 @@ const GAME_DATA = {
 
     words: [
 
-        { word: "அம்மா", sound: "அம்மா" },
-        { word: "அப்பா", sound: "அப்பா" },
-        { word: "மரம்", sound: "மரம்" },
-        { word: "பூனை", sound: "பூனை" },
-        { word: "நாய்", sound: "நாய்" },
-        { word: "பந்து", sound: "பந்து" },
-        { word: "மலர்", sound: "மலர்" },
-        { word: "யானை", sound: "யானை" },
-        { word: "வீடு", sound: "வீடு" },
-        { word: "தமிழ்", sound: "தமிழ்" }
+        { word: "கடல்", sound: "கடல்" },
+        { word: "மழை", sound: "மழை" },
+        { word: "நிலா", sound: "நிலா" },
+        { word: "கிளி", sound: "கிளி" },
+        { word: "மீன்", sound: "மீன்" },
+        { word: "கப்பல்", sound: "கப்பல்" },
+        { word: "தோட்டம்", sound: "தோட்டம்" },
+        { word: "குரங்கு", sound: "குரங்கு" },
+        { word: "பள்ளி", sound: "பள்ளி" },
+        { word: "வானவில்", sound: "வானவில்" }
 
     ]
 
